@@ -64,10 +64,11 @@ cp -r skills/<skill-name> ~/.claude/skills/
 
 ## Available skills
 
-No skills yet — the collection is being seeded. New skills are listed here and live in [`skills/`](skills).
+Skills live in [`skills/`](skills).
 
 | Skill | Description |
 | ----- | ----------- |
+| [get-me](skills/get-me/SKILL.md) | Confirms the agent genuinely understands your intent before acting — restates it, probes ambiguity, and waits for your confirmation. |
 
 ## Repository layout
 

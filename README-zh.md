@@ -64,10 +64,11 @@ cp -r skills/<skill-name> ~/.claude/skills/
 
 ## 可用技能
 
-暂无技能 —— 技能库正在初始化中。新技能会列在这里，并存放于 [`skills/`](skills) 目录。
+技能存放于 [`skills/`](skills) 目录。
 
 | 技能 | 描述 |
 | ---- | ---- |
+| [get-me](skills/get-me/SKILL.md) | 让智能体在动手前先真正理解你的意图 —— 复述理解、追问歧义，等你确认后再执行。 |
 
 ## 仓库结构
 

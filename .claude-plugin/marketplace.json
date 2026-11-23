@@ -5,13 +5,13 @@
   },
   "metadata": {
     "description": "A growing collection of Agent Skills",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "guild",
       "description": "All skills in the Guild collection",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "./",
       "strict": false,
       "author": {
