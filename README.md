@@ -8,7 +8,7 @@
 
 A growing guild of [Agent Skills](https://agentskills.io) — reusable capabilities that teach coding agents how to perform specialized tasks in a repeatable way.
 
-Skills in this repository target [Claude Code](https://docs.claude.com/en/docs/claude-code) first and follow the portable `SKILL.md` format, so they also work with any agent supported by the [skills CLI](https://github.com/vercel-labs/skills) (Codex, Cursor, OpenCode, and more).
+Skills in this repository target [Claude Code](https://docs.claude.com/en/docs/claude-code) first and follow the portable `SKILL.md` format, so they also work with other coding agents that read that format — Codex, Pi, [DSH (DeepSeek Harness)](https://github.com/deepseek-ai/deepseek-harness), Cursor, Gemini CLI, OpenCode, and more.
 
 ## How skills work
 
@@ -31,19 +31,36 @@ All skills arrive as a single plugin and update together. You can also browse wi
 # Pick skills and target agents interactively
 npx skills add Lan-zk/guild
 
-# Or install one skill into one agent
-npx skills add Lan-zk/guild --skill <skill-name> -a claude-code
+# Or install one skill into specific agents
+npx skills add Lan-zk/guild --skill <skill-name> -a codex -a pi
 ```
 
 ### Manual
 
-```bash
-# Personal skills (all projects)
-cp -r skills/<skill-name> ~/.claude/skills/
+Copy a skill folder into the directory your agent reads. Most agents share the `.agents/skills/` convention, either per project or per user:
 
-# Project skills (this project only)
+| Agent | Project | User |
+| ----- | ------- | ---- |
+| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
+| Codex | `.agents/skills/` | `~/.agents/skills/` |
+| Pi | `.agents/skills/` | `~/.agents/skills/` |
+| DSH (DeepSeek Harness) | `.dsh/skills/`, `.agents/skills/` | `~/.dsh/skills/`, `~/.agents/skills/` |
+| Cursor | `.agents/skills/` | `~/.cursor/skills/` |
+| Gemini CLI | `.agents/skills/` | `~/.gemini/skills/` |
+| OpenCode | `.agents/skills/` | `~/.config/opencode/skills/` |
+| GitHub Copilot | `.agents/skills/` | `~/.copilot/skills/` |
+
+```bash
+# Shared convention (Codex, Pi, DSH, Cursor, Gemini CLI, OpenCode, ...)
+cp -r skills/<skill-name> .agents/skills/      # this project
+cp -r skills/<skill-name> ~/.agents/skills/    # all projects
+
+# Claude Code
 cp -r skills/<skill-name> .claude/skills/
+cp -r skills/<skill-name> ~/.claude/skills/
 ```
+
+> DSH scans only one level deep (`<root>/<name>/SKILL.md`) and prefers `.dsh/skills/` over `.agents/skills/` when both exist.
 
 ## Available skills
 

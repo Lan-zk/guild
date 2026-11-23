@@ -8,7 +8,7 @@
 
 Guild 是一个持续生长的 [Agent Skills](https://agentskills.io) 技能库 —— 把可复用的能力沉淀成技能，让编码智能体以可重复的方式完成专业化任务。
 
-本仓库的技能优先面向 [Claude Code](https://docs.claude.com/en/docs/claude-code)，并遵循可移植的 `SKILL.md` 格式，因此也能被 [skills CLI](https://github.com/vercel-labs/skills) 支持的任何智能体（Codex、Cursor、OpenCode 等）使用。
+本仓库的技能优先面向 [Claude Code](https://docs.claude.com/en/docs/claude-code)，并遵循可移植的 `SKILL.md` 格式，因此也能用于其他读取该格式的编码智能体 —— Codex、Pi、[DSH（DeepSeek Harness）](https://github.com/deepseek-ai/deepseek-harness)、Cursor、Gemini CLI、OpenCode 等。
 
 ## 技能如何工作
 
@@ -32,18 +32,35 @@ Guild 是一个持续生长的 [Agent Skills](https://agentskills.io) 技能库 
 npx skills add Lan-zk/guild
 
 # 或把单个技能安装到指定智能体
-npx skills add Lan-zk/guild --skill <skill-name> -a claude-code
+npx skills add Lan-zk/guild --skill <skill-name> -a codex -a pi
 ```
 
 ### 手动复制
 
-```bash
-# 个人级技能（所有项目可用）
-cp -r skills/<skill-name> ~/.claude/skills/
+把技能目录复制到智能体读取的位置。多数智能体共享 `.agents/skills/` 约定，分项目级和用户级：
 
-# 项目级技能（仅当前项目）
+| 智能体 | 项目级 | 用户级 |
+| ------ | ------ | ------ |
+| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
+| Codex | `.agents/skills/` | `~/.agents/skills/` |
+| Pi | `.agents/skills/` | `~/.agents/skills/` |
+| DSH（DeepSeek Harness） | `.dsh/skills/`、`.agents/skills/` | `~/.dsh/skills/`、`~/.agents/skills/` |
+| Cursor | `.agents/skills/` | `~/.cursor/skills/` |
+| Gemini CLI | `.agents/skills/` | `~/.gemini/skills/` |
+| OpenCode | `.agents/skills/` | `~/.config/opencode/skills/` |
+| GitHub Copilot | `.agents/skills/` | `~/.copilot/skills/` |
+
+```bash
+# 共享约定（Codex、Pi、DSH、Cursor、Gemini CLI、OpenCode 等）
+cp -r skills/<skill-name> .agents/skills/      # 仅当前项目
+cp -r skills/<skill-name> ~/.agents/skills/    # 所有项目
+
+# Claude Code
 cp -r skills/<skill-name> .claude/skills/
+cp -r skills/<skill-name> ~/.claude/skills/
 ```
+
+> DSH 只扫描一层目录（`<root>/<name>/SKILL.md`），且两处都存在时优先 `.dsh/skills/` 而非 `.agents/skills/`。
 
 ## 可用技能
 
