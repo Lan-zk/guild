@@ -85,6 +85,8 @@ guild/
 │       └── assets/        # 可选：模板与媒体资源
 ├── AGENTS.md              # 仓库内 AI 智能体的工作规则
 ├── CLAUDE.md              # Claude Code 入口
+├── LICENSE                # Apache License 2.0
+├── NOTICE                 # 版权归属声明
 ├── README.md              # 英文版
 └── README-zh.md           # 本文件
 ```
@@ -109,3 +111,7 @@ guild/
 ## 贡献
 
 请保持 `README.md` 与 `README-zh.md` 内容同步。如果使用 AI 智能体开发，[`AGENTS.md`](AGENTS.md) 会要求它自动维护这两份文档。
+
+## 许可
+
+基于 [Apache License 2.0](LICENSE) 开源。Copyright 2026 Lan-zk。

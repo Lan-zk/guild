@@ -85,6 +85,8 @@ guild/
 │       └── assets/        # Optional: templates and media
 ├── AGENTS.md              # Rules for AI agents working in this repository
 ├── CLAUDE.md              # Claude Code entry point
+├── LICENSE                # Apache License 2.0
+├── NOTICE                 # Copyright attribution
 ├── README.md              # This file
 └── README-zh.md           # Chinese translation
 ```
@@ -109,3 +111,7 @@ guild/
 ## Contributing
 
 Keep `README.md` and `README-zh.md` content-equivalent. If you work with an AI agent, [`AGENTS.md`](AGENTS.md) makes it update the docs for you.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE). Copyright 2026 Lan-zk.
