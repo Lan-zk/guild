@@ -74,6 +74,7 @@ cp -r skills/<skill-name> ~/.claude/skills/
 | ---- | ---- |
 | [get-me](skills/get-me/SKILL.md) | 让智能体在动手前先真正理解你的意图 —— 用平实具体的语言复述理解、点明歧义，等你确认后再执行。 |
 | [pinpoint](skills/pinpoint/SKILL.md) | 通过证据追查问题的根本原因，而不是压制表象 —— 区分观察与假设，并用平实语言解释结论。 |
+| [sniff](skills/sniff/SKILL.md) | 对指定代码或未提交改动做轻量静态审查，只报告证据充分、值得修复的明显缺陷，不臆测问题。 |
 
 ## 仓库结构
 
