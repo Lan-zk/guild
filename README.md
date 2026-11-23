@@ -72,8 +72,8 @@ Skills live in [`skills/`](skills).
 
 | Skill | Description |
 | ----- | ----------- |
-| [get-me](skills/get-me/SKILL.md) | Confirms the agent genuinely understands your intent before acting — restates it in plain, concrete language, surfaces ambiguity, and waits for your confirmation. |
-| [pinpoint](skills/pinpoint/SKILL.md) | Investigates a problem to establish why it occurs — testing explanations against evidence and explaining the root cause, not just suppressing symptoms. |
+| [get-me](skills/get-me/SKILL.md) | Confirms intent when requested or when different interpretations would change the outcome. Restates the goal in plain language and waits for confirmation. |
+| [pinpoint](skills/pinpoint/SKILL.md) | Diagnoses observed failures and regressions. Connects causes to symptoms with evidence and identifies the most informative check when explanations compete. |
 | [sniff](skills/sniff/SKILL.md) | Quick, focused static review of specified code or uncommitted changes — reports only evidence-backed defects worth fixing, without inventing findings. |
 
 ## Repository layout

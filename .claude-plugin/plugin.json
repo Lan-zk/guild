@@ -1,7 +1,7 @@
 {
   "name": "guild",
   "description": "A growing collection of Agent Skills for Claude Code and other coding agents",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": {
     "name": "Lan-zk"
   },

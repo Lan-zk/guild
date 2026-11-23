@@ -72,8 +72,8 @@ cp -r skills/<skill-name> ~/.claude/skills/
 
 | 技能 | 描述 |
 | ---- | ---- |
-| [get-me](skills/get-me/SKILL.md) | 让智能体在动手前先真正理解你的意图 —— 用平实具体的语言复述理解、点明歧义，等你确认后再执行。 |
-| [pinpoint](skills/pinpoint/SKILL.md) | 通过证据追查问题的根本原因，而不是压制表象 —— 区分观察与假设，并用平实语言解释结论。 |
+| [get-me](skills/get-me/SKILL.md) | 在用户要求先确认意图，或不同理解会改变结果时，用平实语言复述目标，等待确认后再执行。 |
+| [pinpoint](skills/pinpoint/SKILL.md) | 诊断已观察到的故障和回归，用证据说明原因如何导致症状；有多种可能解释时，找出最能区分它们的检查。 |
 | [sniff](skills/sniff/SKILL.md) | 对指定代码或未提交改动做轻量静态审查，只报告证据充分、值得修复的明显缺陷，不臆测问题。 |
 
 ## 仓库结构
