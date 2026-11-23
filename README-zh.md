@@ -1,0 +1,93 @@
+# Guild
+
+[![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)](https://agentskills.io)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)
+[![npx skills](https://img.shields.io/badge/npx-skills-black)](https://skills.sh)
+
+[English](README.md) · **简体中文**
+
+Guild 是一个持续生长的 [Agent Skills](https://agentskills.io) 技能库 —— 把可复用的能力沉淀成技能，让编码智能体以可重复的方式完成专业化任务。
+
+本仓库的技能优先面向 [Claude Code](https://docs.claude.com/en/docs/claude-code)，并遵循可移植的 `SKILL.md` 格式，因此也能被 [skills CLI](https://github.com/vercel-labs/skills) 支持的任何智能体（Codex、Cursor、OpenCode 等）使用。
+
+## 技能如何工作
+
+每个技能是一个自包含的目录，内含 `SKILL.md`：YAML frontmatter 提供 `name` 和 `description`，其后是使用说明、脚本和参考资料。智能体启动时只读取 frontmatter，在任务与描述匹配时才加载完整技能内容。
+
+## 安装
+
+### Claude Code（插件市场）
+
+```
+/plugin marketplace add Lan-zk/guild
+/plugin install guild@guild
+```
+
+所有技能作为一个插件整体安装、整体更新。也可以通过 `/plugin` → `Browse and install plugins` → `guild` 浏览安装。
+
+### 任意智能体（skills CLI）
+
+```bash
+# 交互式选择技能与目标智能体
+npx skills add Lan-zk/guild
+
+# 或把单个技能安装到指定智能体
+npx skills add Lan-zk/guild --skill <skill-name> -a claude-code
+```
+
+### 手动复制
+
+```bash
+# 个人级技能（所有项目可用）
+cp -r skills/<skill-name> ~/.claude/skills/
+
+# 项目级技能（仅当前项目）
+cp -r skills/<skill-name> .claude/skills/
+```
+
+## 可用技能
+
+暂无技能 —— 技能库正在初始化中。新技能会列在这里，并存放于 [`skills/`](skills) 目录。
+
+| 技能 | 描述 |
+| ---- | ---- |
+
+## 仓库结构
+
+```
+guild/
+├── .claude-plugin/
+│   ├── marketplace.json   # Claude Code 插件市场清单
+│   └── plugin.json        # 插件元数据
+├── skills/                # 每个技能一个目录
+│   └── <skill-name>/
+│       ├── SKILL.md       # 必需：frontmatter + 指令
+│       ├── scripts/       # 可选：可执行辅助脚本
+│       ├── references/    # 可选：按需加载的参考文档
+│       └── assets/        # 可选：模板与媒体资源
+├── AGENTS.md              # 仓库内 AI 智能体的工作规则
+├── CLAUDE.md              # Claude Code 入口
+├── README.md              # 英文版
+└── README-zh.md           # 本文件
+```
+
+## 新增技能
+
+1. 创建 `skills/<kebab-case-name>/SKILL.md`：
+
+   ```markdown
+   ---
+   name: <kebab-case-name>
+   description: 一两句话说明它做什么、什么时候使用。
+   ---
+
+   智能体执行的指令。通过相对路径引用随技能附带的文件。
+   ```
+
+2. 目录名与 frontmatter 中的 `name` 保持一致，使用 kebab-case。
+3. 保持技能自包含；大段参考资料放入 `references/`，只在需要时加载。
+4. 在 `README.md` 和 `README-zh.md` **两份**文件的技能表中各加一行（规则见 [`AGENTS.md`](AGENTS.md)）。
+
+## 贡献
+
+请保持 `README.md` 与 `README-zh.md` 内容同步。如果使用 AI 智能体开发，[`AGENTS.md`](AGENTS.md) 会要求它自动维护这两份文档。
