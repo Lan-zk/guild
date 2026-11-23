@@ -68,7 +68,7 @@ cp -r skills/<skill-name> ~/.claude/skills/
 
 | 技能 | 描述 |
 | ---- | ---- |
-| [get-me](skills/get-me/SKILL.md) | 让智能体在动手前先真正理解你的意图 —— 复述理解、追问歧义，等你确认后再执行。 |
+| [get-me](skills/get-me/SKILL.md) | 让智能体在动手前先真正理解你的意图 —— 用平实具体的语言复述理解、点明歧义，等你确认后再执行。 |
 
 ## 仓库结构
 
