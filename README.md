@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo/logo.svg" alt="Guild logo" width="160">
+</p>
+
 # Guild
 
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)](https://agentskills.io)
@@ -83,6 +87,8 @@ guild/
 │       ├── scripts/       # Optional: executable helpers
 │       ├── references/    # Optional: docs loaded on demand
 │       └── assets/        # Optional: templates and media
+├── docs/
+│   └── logo/              # Logo artwork (PNG and SVG)
 ├── AGENTS.md              # Rules for AI agents working in this repository
 ├── CLAUDE.md              # Claude Code entry point
 ├── LICENSE                # Apache License 2.0

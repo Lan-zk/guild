@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo/logo.svg" alt="Guild 徽标" width="160">
+</p>
+
 # Guild
 
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)](https://agentskills.io)
@@ -83,6 +87,8 @@ guild/
 │       ├── scripts/       # 可选：可执行辅助脚本
 │       ├── references/    # 可选：按需加载的参考文档
 │       └── assets/        # 可选：模板与媒体资源
+├── docs/
+│   └── logo/              # Logo 素材（PNG 与 SVG）
 ├── AGENTS.md              # 仓库内 AI 智能体的工作规则
 ├── CLAUDE.md              # Claude Code 入口
 ├── LICENSE                # Apache License 2.0
