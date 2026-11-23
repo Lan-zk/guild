@@ -73,6 +73,7 @@ Skills live in [`skills/`](skills).
 | Skill | Description |
 | ----- | ----------- |
 | [get-me](skills/get-me/SKILL.md) | Confirms the agent genuinely understands your intent before acting — restates it in plain, concrete language, surfaces ambiguity, and waits for your confirmation. |
+| [pinpoint](skills/pinpoint/SKILL.md) | Investigates a problem to establish why it occurs — testing explanations against evidence and explaining the root cause, not just suppressing symptoms. |
 
 ## Repository layout
 
