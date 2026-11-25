@@ -74,6 +74,7 @@ cp -r skills/<skill-name> ~/.claude/skills/
 | ---- | ---- |
 | [get-me](skills/get-me/SKILL.md) | 在用户要求先确认意图，或不同理解会改变结果时，用平实语言复述目标，等待确认后再执行。 |
 | [pinpoint](skills/pinpoint/SKILL.md) | 诊断已观察到的故障和回归，用证据说明原因如何导致症状；有多种可能解释时，找出最能区分它们的检查。 |
+| [skills-design](skills/skills-design/SKILL.md) | 设计和审查 Agent Skills，明确技能何时适用，编写最小充分的指令，并用真实任务验证效果。 |
 | [sniff](skills/sniff/SKILL.md) | 对指定代码或未提交改动做轻量静态审查，只报告证据充分、值得修复的明显缺陷，不臆测问题。 |
 
 ## 仓库结构
